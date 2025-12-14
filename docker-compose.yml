@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: biblioteca-postgres
+    environment:
+      POSTGRES_DB: biblioteca-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+volumes:
+  pgdata:
