@@ -28,10 +28,8 @@ public class LivroEntityAdapter implements LivroModelRepository {
     }
 
     @Override
-    public List<LivroModel> listarPorISBN(String isbn) {
-        return livroEntityRepository.findByIsbn(isbn).stream()
-                .map(this::paraModelo)
-                .toList();
+    public Optional<LivroModel> buscarPorISBN(String isbn) {
+        return livroEntityRepository.findByIsbn(isbn).map(this::paraModelo);
     }
 
     @Override

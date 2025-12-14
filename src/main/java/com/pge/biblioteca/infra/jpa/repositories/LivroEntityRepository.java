@@ -11,6 +11,5 @@ import java.util.Optional;
 public interface LivroEntityRepository extends JpaRepository<LivroEntity, Long> {
     List<LivroEntity> findByQuantidadeDisponivelGreaterThan(Integer quantidade);
     Optional<LivroEntity> findByIsbn(String isbn);
-    List<LivroEntity> findAllByIsbn(String isbn);
 
 }
