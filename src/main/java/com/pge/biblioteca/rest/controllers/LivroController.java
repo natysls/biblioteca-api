@@ -15,6 +15,10 @@ public class LivroController {
     @Autowired
     private LivroService servico;
 
+    public LivroController(LivroService servico) {
+        this.servico = servico;
+    }
+
     @GetMapping
     public ResponseEntity<List<LivroDTO>> listarTodosLivros() {
         return ResponseEntity.ok(servico.listarTodosLivros());
